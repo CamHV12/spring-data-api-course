@@ -5,15 +5,16 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import vn.spring.api.business.domain.category.ProductCategoryData;
 
 @Service
 @Transactional
 @RequiredArgsConstructor
-@Slf4j
 public class GetRequestProductApplication {
 	public GetRequestProductOutput start(GetRequestProductInput input) {
-		GetRequestProductOutput output = GetRequestProductOutput.builder().build();
+		GetRequestProductOutput output = GetRequestProductOutput.builder().id(null).name(null).sku(null)
+				.description(null).active(false).price(null).imageUrl(null).dateCreated(null).lastUpdated(null)
+				.category(ProductCategoryData.builder().build()).build();
 		return output;
 	}
 
