@@ -1,7 +1,7 @@
 package vn.spring.api.business.domain.product;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,7 +19,7 @@ public class ProductResponseData {
 	private BigDecimal price;
 	private boolean active;
 	private String imageUrl;
-	private LocalDateTime dateCreated;
-	private LocalDateTime lastUpdated;
+	private LocalDate dateCreated;
+	private LocalDate lastUpdated;
 	private ProductCategoryResponseData category;
 }
