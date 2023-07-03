@@ -28,26 +28,33 @@ import vn.spring.api.business.entity.category.ProductCategory;
 @AllArgsConstructor
 @Getter
 @Setter
-@Table(name = "products", uniqueConstraints = {
-		@UniqueConstraint(name = "sku_unique", columnNames = "stoke_keeping_unit")
+@Table(name = "product", uniqueConstraints = {
+		@UniqueConstraint(name = "sku_unique", columnNames = "sku")
 
 })
 public class Product {
 	@Id
 	private String id;
-	@Column(name = "stoke_keeping_unit", nullable = false)
+	@Column(name = "sku", nullable = false)
 	private String sku;
-	@Column(nullable = false)
+	
+	@Column(name = "name", nullable = false)
 	private String name;
+	@Column(name = "description")
 	private String description;
+	@Column(name = "price")
 	private BigDecimal price;
+	@Column(name = "active")
 	private boolean active;
+	@Column(name = "imageUrl")
 	private String imageUrl;
 	@CreationTimestamp
+	@Column(name = "dateCreated")
 	private LocalDate dateCreated;
 	@UpdateTimestamp
+	@Column(name = "lastUpdated")
 	private LocalDate lastUpdated;
 	@ManyToOne
-	@JoinColumn(name = "category_id", referencedColumnName = "id")
+	@JoinColumn(name = "category", referencedColumnName = "id")
 	private ProductCategory category;
 }

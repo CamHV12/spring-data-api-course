@@ -14,11 +14,11 @@ import vn.spring.api.business.domain.product.ProductRequestRepository;
 @Transactional(rollbackOn = Exception.class)
 @RequiredArgsConstructor
 public class GetRequestProductApplication {
-//	private final ProductRequestQueryService productRequestQueryService;
+	private final ProductRequestQueryService productRequestQueryService;
 	private final ProductRequestRepository productRequestRepository;
 
 	public GetRequestProductOutput start(GetRequestProductInput input) {
-//		ProductRequestDomainDto dto = productRequestQueryService.getProductbyId(input.id());
+		ProductRequestDomainDto dto1 = productRequestQueryService.getProductbyId(input.id());
 		ProductRequestDomainDto dto = productRequestRepository.findProductById(input.id());
 //		ProductRequestDomainDto dto = ProductRequestDomainDto.builder().build();
 		GetRequestProductOutput output = GetRequestProductOutput.builder().id(dto.id()).name(dto.name()).sku(dto.sku())

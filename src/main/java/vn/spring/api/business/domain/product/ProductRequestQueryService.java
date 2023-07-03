@@ -7,6 +7,6 @@ import lombok.RequiredArgsConstructor;
 @Service
 public interface ProductRequestQueryService {
 
-//	ProductRequestDomainDto getProductbyId(String id);
+	ProductRequestDomainDto getProductbyId(String id);
 
 }
